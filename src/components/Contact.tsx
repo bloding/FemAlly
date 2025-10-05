@@ -2,7 +2,7 @@ import React from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
-  const phoneNumber = "+34632800363";
+  const phoneNumber = "+212606253403";
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
