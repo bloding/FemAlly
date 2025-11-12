@@ -1,12 +1,7 @@
 import React from 'react';
-import { QrCode, Wallet, Heart } from 'lucide-react';
+import { Wallet, Heart } from 'lucide-react';
 
 const Support = () => {
-  const walletAddress = "0x62468C025d2738eDB2662B9994F52Af0Afa17c9d";
-  
-  // Generate QR code URL using QR Server API
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${walletAddress}`;
-
   return (
     <section id="support" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +43,7 @@ const Support = () => {
                 <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Secure Crypto Donations</h4>
                   <p className="text-gray-600 text-sm">
-                    We accept cryptocurrency donations for secure, transparent, and global accessibility. Your contributions are processed safely and efficiently.
+                    We accept multiple payment methods including cryptocurrency for secure, transparent, and global accessibility. Your contributions are processed safely and efficiently.
                   </p>
                 </div>
               </div>
@@ -56,29 +51,25 @@ const Support = () => {
               <div className="text-center">
                 <div className="bg-gradient-to-br from-purple-600 to-pink-500 rounded-2xl p-8 text-white">
                   <Wallet className="h-12 w-12 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold mb-6">Crypto Donation</h4>
+                  <h4 className="text-2xl font-bold mb-6">Make a Donation</h4>
                   
-                  <div className="bg-white rounded-xl p-6 mb-6">
-                    <div className="flex items-center justify-center mb-4">
-                      <QrCode className="h-6 w-6 text-purple-600 mr-2" />
-                      <span className="text-purple-600 font-semibold">Scan to Donate</span>
-                    </div>
-                    <img 
-                      src={qrCodeUrl} 
-                      alt="Wallet QR Code" 
-                      className="mx-auto rounded-lg shadow-md"
-                    />
+                  <div className="bg-white rounded-xl p-4 mb-6">
+                    <iframe 
+                      src="https://nowpayments.io/embeds/donation-widget?api_key=8c8048e4-194d-4b27-a9c1-8280c13c9ae8" 
+                      width="346" 
+                      height="623" 
+                      frameBorder="0" 
+                      scrolling="no" 
+                      style={{overflow: 'hidden', maxWidth: '100%'}}
+                      title="Donation Widget"
+                    >
+                      Can't load widget
+                    </iframe>
                   </div>
                   
                   <p className="text-purple-100 text-sm mb-4">
-                    Scan the QR code above with your crypto wallet to make a secure donation
+                    Choose your preferred payment method to make a secure donation
                   </p>
-                  
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                    <p className="text-white/90 text-xs">
-                      Wallet Address Available via QR Code
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
